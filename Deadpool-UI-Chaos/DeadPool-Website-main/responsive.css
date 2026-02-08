@@ -1,0 +1,403 @@
+/* <====================================================================> */
+/* <                   DEADPOOL RESPONSIVE SUITE                      > */
+/* <       Handles Phones (<768px) and Tablets (768px - 1024px)       > */
+/* <====================================================================> */
+
+/* --- GLOBAL RESET FOR MOBILE --- */
+@media screen and (max-width: 1024px) {
+    body, html {
+        overflow-x: hidden; /* Horizontal Scroll Block */
+        width: 100%;
+    }
+    
+    /* Disable GSAP absolute positioning conflicts on mobile */
+    .section-1, .section-2, .footer {
+        height: auto !important;
+        min-height: 100vh;
+        position: relative !important;
+        overflow: hidden;
+    }
+}
+
+/* <====================================================================> */
+/* <                        MOBILE DEVICES (Phones)                       > */
+/* <====================================================================> */
+
+@media screen and (max-width: 768px) {
+
+    /* <--- NAVBAR: DEADPOOL FULL SCREEN MENU ---> */
+    nav {
+        padding: 0 20px;
+        height: 80px;
+    }
+
+    nav .logo {
+        width: 140px;
+        z-index: 1000;
+    }
+
+    /* Hide Desktop Links & Icons */
+    .nav-icons > i, nav ul li {
+        display: block; /* Reset for animation */
+    }
+
+    /* Full Screen Menu Overlay */
+    nav ul {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #0f0f0f; /* Pitch Black */
+        background-image: 
+            linear-gradient(rgba(173, 18, 34, 0.1) 1px, transparent 1px), 
+            linear-gradient(90deg, rgba(173, 18, 34, 0.1) 1px, transparent 1px);
+        background-size: 40px 40px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        z-index: 998;
+        transform: translateY(-100%);
+        transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    }
+
+    nav ul.active {
+        transform: translateY(0);
+    }
+
+    nav ul li a {
+        font-family: var(--primaryFont);
+        font-size: 45px;
+        color: white;
+        text-transform: uppercase;
+        -webkit-text-stroke: 1px transparent;
+    }
+
+    /* Hamburger Menu Visible */
+    .hamgurber-menu {
+        display: flex;
+        z-index: 1001;
+    }
+
+    /* <--- HEROBOX: MAGAZINE COVER STYLE ---> */
+    .herobox {
+        height: 100vh;
+        min-height: 650px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Big Text Behind Character */
+    .herobox h1.herobox-mainheading {
+        font-size: 22vw;
+        top: 18%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        text-align: center;
+        z-index: 1;
+        line-height: 0.8;
+    }
+
+    /* Character Center */
+    .character {
+        width: 95%;
+        max-width: 380px;
+        height: auto;
+        left: 50%;
+        bottom: 12%;
+        transform: translateX(-50%);
+        z-index: 2;
+    }
+
+    /* Red Circle Glow */
+    .red-circle {
+        width: 90vw;
+        height: 90vw;
+        top: 25%;
+        opacity: 0.6;
+        filter: blur(40px);
+    }
+
+    /* Footer / CTA Area */
+    .hero-footer {
+        width: 100%;
+        padding: 0 20px;
+        bottom: 30px;
+        flex-direction: column;
+        gap: 15px;
+        z-index: 10;
+        height: auto;
+    }
+
+    .left-hero-content {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-left-footer-logo { display: none; } /* Hide small logo */
+
+    /* Book Button - Big & Tappable */
+    .right-hero-content {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .right-hero-content a {
+        width: 100%;
+        height: 55px;
+        background: rgba(173, 18, 34, 0.9);
+        border: 1px solid rgba(255,255,255,0.2);
+        box-shadow: 0 0 20px rgba(173, 18, 34, 0.4);
+        font-size: 18px;
+        letter-spacing: 2px;
+    }
+
+    /* Hiding Clutter */
+    .grid, .top-bar, .cd, .right-hero-content p, .herobox .hero-slider {
+        display: none !important;
+    }
+
+    /* <--- SECTION 1: CLEAN STACK LAYOUT ---> */
+    .section-1 {
+        padding: 40px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        background: white;
+    }
+
+    /* Reset Absolute Positions */
+    .marvel-studio, .date-status, .card-container, .left-section1-content, .rating, .socials, .section-1footer-heading, .section-1footer-heading2, .section-1footer-heading3, .directors-container {
+        position: relative !important;
+        inset: auto !important;
+        transform: none !important;
+        opacity: 1 !important; /* Force visible */
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Top Elements */
+    .topback, .topbackground { height: 40px; border-radius: 0 0 20px 20px; }
+    .marvel-studio { align-items: center; margin-top: 10px; }
+    .marvel-logo { width: 140px; height: auto; }
+    .marvel-header { justify-content: center; }
+
+    /* Circles Row */
+    .date-status {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+        filter: none !important;
+    }
+    .trailer, .IMAX, .date { width: 70px; height: 70px; }
+    .trailer h1, .IMAX h1, .date h1 { font-size: 22px; }
+    .trailer h2, .IMAX h2, .date h2 { font-size: 8px; }
+
+    /* Cards - Center Focus */
+    .card-container {
+        width: 260px;
+        height: 350px;
+        margin: 20px auto;
+        display: flex;
+        justify-content: center;
+    }
+    .card { width: 100%; height: 100%; }
+
+    /* Text Info */
+    .left-section1-content { padding: 0 20px; }
+    .left-section1heading { justify-content: center; margin-bottom: 10px; }
+    .left-section1-content p { font-size: 13px; line-height: 1.5; }
+
+    /* Rating & Socials */
+    .rating, .socials {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .rating { margin-top: 0; transform: scale(0.8); }
+    .socials { gap: 20px; }
+
+    /* Hide Extra Desktop Decor */
+    .section1-right-top-description, .slider-indicator-container { display: none !important; }
+
+    /* Directors Footer */
+    .section-1 h1.section-1footer-heading,
+    .section-1 h1.section-1footer-heading3,
+    .directors-container h1 {
+        font-size: 50px !important;
+        line-height: 0.9;
+        margin: 5px 0;
+    }
+    .section-1 h2.section-1footer-heading2 { font-size: 30px !important; margin: 5px 0; }
+    
+    .directors-container {
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .section-1 p.section-1footer-date {
+        position: relative !important;
+        bottom: 0;
+        margin-top: 20px;
+        font-size: 12px;
+        opacity: 1 !important;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* <--- SECTION 2: VERTICAL FLOW ---> */
+    .section-2 {
+        padding: 50px 0 0 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    /* Hide Desktop Clutter */
+    .section2-counting, .mid-arrows, .right-cd, .section-2-users { display: none !important; }
+
+    /* Heading */
+    .section-2 h1.section-2-mainHeading {
+        position: relative !important;
+        inset: auto !important;
+        transform: none !important;
+        opacity: 1 !important;
+        font-size: 36px !important;
+        width: 90%;
+        text-align: center;
+        line-height: 1;
+    }
+
+    /* Story Text */
+    .teaser-text {
+        position: relative !important;
+        inset: auto !important;
+        flex-direction: column;
+        height: auto;
+        padding: 0;
+        gap: 20px;
+    }
+    .left-section2-content {
+        position: relative !important;
+        inset: auto !important;
+        width: 100%;
+        text-align: center;
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+    }
+    .left-section2heading { justify-content: center; margin-bottom: 10px; }
+    .left-section2-content p { padding: 0 20px; font-size: 13px; }
+
+    /* Floating Card */
+    .card-img {
+        position: relative !important;
+        inset: auto !important;
+        transform: none !important;
+        width: 220px;
+        height: 280px;
+        margin: 20px auto;
+        opacity: 1 !important;
+    }
+
+    /* Deadpool Character */
+    .deadpool-character {
+        position: relative !important;
+        inset: auto !important;
+        transform: none !important;
+        width: 280px;
+        height: auto;
+        margin-top: -50px; /* Overlap card slightly */
+        z-index: 5;
+        opacity: 1 !important;
+    }
+    .deadpool-character img { width: 100%; height: auto; }
+
+    /* Footer Face-Off Images */
+    .section2-footer-images {
+        position: relative !important;
+        inset: auto !important;
+        width: 100%;
+        height: 180px;
+        display: flex;
+        justify-content: space-between;
+        padding: 0;
+        margin-top: 0;
+    }
+    .left-footer-image, .right-footer-image {
+        position: relative !important;
+        top: 0 !important;
+        width: 48%;
+        height: 100%;
+    }
+    .left-footer-image img, .right-footer-image img {
+        object-fit: cover;
+        object-position: top center;
+    }
+
+    /* <--- FOOTER: FINAL CALL ---> */
+    .footer {
+        padding: 60px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: auto !important;
+    }
+    .footer-content {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        transform: none !important;
+        opacity: 1 !important;
+        filter: none !important;
+        text-align: center;
+    }
+    .footer-content h1 { font-size: 55px !important; line-height: 1; margin: 20px 0; }
+    .footer-date {
+        padding: 0;
+        justify-content: center;
+        gap: 20px;
+    }
+    .footer-date h2 { font-size: 24px !important; }
+}
+
+
+/* <====================================================================> */
+/* <                        TABLET DEVICES (iPad)                       > */
+/* <====================================================================> */
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    
+    /* Better Scaling for Tablets */
+    nav { padding: 0 40px; }
+    
+    /* Herobox */
+    .herobox h1.herobox-mainheading { font-size: 18vw; top: 22%; }
+    .character { width: 60%; max-width: 450px; bottom: 15%; }
+    .red-circle { width: 600px; height: 600px; }
+    
+    /* Section 1 */
+    .section-1 { height: auto !important; padding: 60px 0; }
+    .card-container { width: 350px; height: 450px; }
+    .section-1 h1.section-1footer-heading, .section-1 h1.section-1footer-heading3 {
+        font-size: 10vw !important;
+    }
+    
+    /* Section 2 */
+    .section-2 { height: auto !important; }
+    .section-2 h1.section-2-mainHeading { font-size: 60px !important; }
+    .teaser-text { padding: 0 40px; }
+    .card-img { width: 300px; height: 380px; }
+    .deadpool-character { width: 400px; margin-top: -80px; }
+    
+    /* Hide some detailed elements on tablet too for cleaner look */
+    .grid, .right-hero-content p, .section2-counting { display: none !important; }
+}
